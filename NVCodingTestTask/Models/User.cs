@@ -29,7 +29,7 @@ namespace NVCodingTestTask.Models
 
         [Display(Name = "Skype login")]
         [RegularExpression(@"^[A-Za-z0-9-\._+]{0,64}$", ErrorMessage = "Skype login must contain only big and little english letters and digits")]
-        [StringLength(64, ErrorMessage = "Skype login length must be between 3 and 64 symbols")]
+        [StringLength(64, ErrorMessage = "Skype login length must be less than 64 symbols")]
         public string SkypeLogin { get; set; }
 
         [Display(Name = "Signature")]

@@ -1,4 +1,5 @@
 ﻿$(function () {
+    //request in process flag - to avoid duplicate asynchronous requests to the controller methods
     window.requestInProcess = false;
 
     $('#Name').focusout(send);
@@ -7,13 +8,14 @@
     $('#SkypeLogin').focusout(send);
     $('#Signature').focusout(send);
 
+    //Hiding submit button programmatically
     $('#hiddenSubmitButton').hide();
-
 
 });
 
 
 function send() {
+    //Getting values from respective fields
     var userName = $('#Name').val();
     var eMail = $('#Email').val();
     var avatar = $('#Avatar').val();
@@ -21,33 +23,11 @@ function send() {
     var signature = $('#Signature').val();
     var id = $('#Id').val();
 
-    //console.log(id);
-
-    //var formValid = this.validate().form();
-
-    //$('#hiddenSubmitButton').click();
-
-    //var errorsCount = 0;
-
-    //var textDanger = $('.text-danger');
-
-    //console.log(textDanger);
-
-    //if (textDanger.length > 0) {
-    //    for (i = 0; i < textDanger.length; i++) {
-    //        console.log(textDanger[i]);
-    //        if (textDanger[i].childElementCount > 0) {
-    //            console.log(textDanger[i].childElementCount);
-    //            errorsCount++;
-    //        } else {
-    //            console.log(textDanger[i].childElementCount);
-    //        }
-    //    }
-    //}
-
+    //trying to validate form
     var form = document.forms[0];
     $(form).validate();
 
+    //performing ajax query
     if ($(form).valid() && window.requestInProcess == false) {
         window.requestInProcess = true;
         var jqxhr = $.ajax(
