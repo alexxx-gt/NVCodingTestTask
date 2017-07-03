@@ -21,7 +21,7 @@ namespace NVCodingTestTask.Models
         [Display(Name = "E-mail")]
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "This field cannot be empty")]
-        [RegularExpression(@"[A-Za-z0-9-._%+]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", ErrorMessage = "Incorrect address format")]
+        [RegularExpression(@"[A-Za-z0-9-_]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", ErrorMessage = "Incorrect address format")]
         public string Email { get; set; }
 
         [Display(Name = "Avatar path")]
