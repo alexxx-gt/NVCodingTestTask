@@ -9,7 +9,7 @@ using Owin;
 
 namespace NVCodingTestTask.Models
 {
-    public class UserDbInitializer : DropCreateDatabaseAlways<UserContext>
+    public class UserDbInitializer : DropCreateDatabaseIfModelChanges<UserContext>
     {
         UserContext db = new UserContext();
 
