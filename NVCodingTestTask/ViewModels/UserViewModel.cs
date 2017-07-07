@@ -5,11 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NVCodingTestTask.Models
+namespace NVCodingTestTask.ViewModels
 {
-    public class User
+    public class UserViewModel
     {
-        [HiddenInput (DisplayValue = false)]
+        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
         [Display(Name = "User name")]

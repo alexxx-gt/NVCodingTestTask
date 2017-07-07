@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NVCodingTestTask.Models.User>
+﻿@model IEnumerable<NVCodingTestTask.ViewModels.UserViewModel>
 
 @{
     ViewBag.Title = "List Users";
@@ -29,24 +29,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink(item.Name, "EditUser", new {id = item.Id})
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Avatar)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SkypeLogin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Signature)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "EditUser", new { id = item.Id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Avatar))
+                {
+                    <img src="@item.Avatar" alt="User avatar here" height="100" width="100"/>
+                }
+                else
+                {
+                    <div>User avatar is absent</div>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkypeLogin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Signature)
+            </td>
+        </tr>
+    }
 
 </table>
