@@ -37,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" name="upload" id="uploadFile" accept="image/png, image/jpeg" /> <br /> <br />
+                <input type="file" name="upload" id="uploadFile" accept="image/png, image/jpeg" /> <br />
                 @if (Model != null)
                 {
                     if (!string.IsNullOrEmpty(Model.Avatar))

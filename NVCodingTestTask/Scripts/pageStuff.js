@@ -90,12 +90,12 @@ function setImage() {
                     
                     //in case of editing - change src, else create img tag
                     if ($('#avatarImage').length) {
-                        avatarImage.attr('src',
+                        $('#avatarImage').attr('src',
                             '/Files/avatar_id_' +
                             id +
                             input.prop('files')[0].name.substring(input.prop('files')[0].name.lastIndexOf(".")));
                     } else {
-                        var addstring = "<img src=\"/Files/avatar_id_" + id +
+                        var addstring = "<br /><img src=\"/Files/avatar_id_" + id +
                             input.prop('files')[0].name.substring(input.prop('files')[0].name.lastIndexOf(".")) +
                             "\" height=\"100\" width=\"100\">";
                         console.log(addstring);
